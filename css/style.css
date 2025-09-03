@@ -1,0 +1,178 @@
+/* ================================
+   Root variables (light theme)
+================================ */
+:root {
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --text: #111111;
+    --muted: #666666;
+    --accent: #007bff;
+    --border: #dddddd;
+}
+
+/* ================================
+   Dark theme (manual .dark class)
+================================ */
+.dark {
+    --bg: #0b0b0f;
+    --card: #151722;
+    --text: #e9edf1;
+    --muted: #9aa4b2;
+    --accent: #4f7cff;
+    --border: #232633;
+}
+
+/* ================================
+   Dark theme (auto if system prefers)
+================================ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b0b0f;
+        --card: #151722;
+        --text: #e9edf1;
+        --muted: #9aa4b2;
+        --accent: #4f7cff;
+        --border: #232633;
+    }
+}
+
+#expense-form > .row:last-of-type,
+#expense-form > button,
+#expense-form > .btn-outline {
+    margin-top: 12px;
+}
+
+/* ================================
+   Base reset & body
+================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 system-ui, Segoe UI, Roboto, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+h1, h2 {
+    margin: 0 0 12px;
+}
+
+/* ================================
+   Layout helpers
+================================ */
+.container {
+    max-width: 980px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+/* ================================
+   Form elements
+================================ */
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 220px;
+}
+
+input,
+select {
+    background: #514a4a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark input,
+.dark select {
+    background: #0e1018;
+}
+
+/* ================================
+   Buttons
+================================ */
+.btn,
+.btn-outline {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text);
+}
+
+/* ================================
+   Table
+================================ */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    text-align: left;
+}
+
+/* ================================
+   Chips (participants)
+================================ */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 999px; /* pill shape */
+}
+
+/* ================================
+   Balance section
+================================ */
+.balance-line {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px;
+}

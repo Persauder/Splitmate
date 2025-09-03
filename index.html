@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Splitmate</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<header class = "container">
+    <h1>Splitmate</h1>
+</header>
+<main>
+    <section class="card">
+        <h2>New expense</h2>
+        <form id = "expense-form">
+            <div class="row">
+                <label>Description
+                    <input required name = "title" placeholder = "Taxi, Kebab..."/>
+                </label>
+                <label>Sum (zł)
+                    <input required name="amount" type="number" min="0" step="0.01"/>
+                </label>
+            </div>
+            <div class="row">
+                <label>Payer
+                    <select required name = "payer" id = "payer-select"></select>
+                </label>
+                <label>Date
+                    <input name = "date" type="date">
+                </label>
+            </div>
+
+            <fieldset>
+                <legend>Participants</legend>
+                <div id="participants" class="chips"></div>
+            </fieldset>
+
+            <div class="row">
+                <button type="submit" class = "btn">Add</button>
+                <button class="btn-outline" type="button" id="export-btn">Export JSON</button>
+                <label class="btn-outline">
+                    Import JSON
+                    <input id="import-input" type="file" accept="application/json" hidden />
+                </label>
+            </div>
+
+        </form>
+
+    </section>
+
+    <section class="card">
+        <h2>Spendings</h2>
+        <input id="search" placeholder="Search by description..." />
+        <table id="table" class="table"></table>
+    </section>
+
+    <section class="card">
+        <h2>Suggested Transfers</h2>
+        <div id="balances"></div>
+    </section>
+</main>
+
+<script type = "module" src="js/main.js"></script>
+</body>
+</html>
