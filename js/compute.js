@@ -43,3 +43,4 @@ export function computeBalance (expenses) {
     return { balances, transfers };
 }
 
+function escapeHtml(s){ return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }

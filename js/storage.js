@@ -11,7 +11,7 @@ export function saveData(data) {
 
 export function defaultData() {
     return {
-        people: ["Максим","Вадим","Кіріл","Артем"],
+        people: ["Maksym","Vadym","Kyryl","Artem"],
         expenses: [] // {id,title,amount,payer,participants,date}
     };
 }
